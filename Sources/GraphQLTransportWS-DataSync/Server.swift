@@ -25,9 +25,13 @@ public class Server<InitPayload: Equatable & Codable> {
 
     var initialized = false
 
-    let disposeBag = DisposeBag()
+    var disposeBags = [String: DisposeBag]()
     let encoder = GraphQLJSONEncoder()
     let decoder = JSONDecoder()
+    
+    enum DuplicateKeyError: Error {
+        case duplicateKey
+    }
 
     /// Create a new server
     ///
@@ -87,6 +91,7 @@ public class Server<InitPayload: Equatable & Codable> {
                         self.error(.invalidRequestFormat(messageType: .complete))
                         return
                     }
+                    self.disposeBags.removeValue(forKey: completeRequest.id)
                     self.onOperationComplete(completeRequest.id)
                 case .unknown:
                     self.error(.invalidType())
@@ -207,6 +212,12 @@ public class Server<InitPayload: Equatable & Codable> {
                 // swiftlint:disable:next force_cast
                 let stream = streamOpt as! ObservableSubscriptionEventStream
                 let observable = stream.observable
+                guard disposeBags[id] == nil else {
+                    self.sendError(DuplicateKeyError.duplicateKey, id: id)
+                    return
+                }
+                let disposeBag = DisposeBag()
+                disposeBags[id] = disposeBag
 
                 observable.subscribe(
                     onNext: { [weak self] resultFuture in
@@ -226,7 +237,7 @@ public class Server<InitPayload: Equatable & Codable> {
                         guard let self = self else { return }
                         self.sendComplete(id: id)
                     }
-                ).disposed(by: self.disposeBag)
+                ).disposed(by: disposeBag)
             }
             subscribeFuture.whenFailure { error in
                 self.sendError(error, id: id)
@@ -274,6 +285,7 @@ public class Server<InitPayload: Equatable & Codable> {
                 id: id
             ).toJSON(encoder)
         )
+        self.disposeBags.removeValue(forKey: id)
         self.onOperationComplete(id)
     }
 
