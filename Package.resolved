@@ -1,70 +1,68 @@
 {
-  "object": {
-    "pins": [
-      {
-        "package": "Graphiti",
-        "repositoryURL": "https://github.com/GraphQLSwift/Graphiti.git",
-        "state": {
-          "branch": null,
-          "revision": "1d90f4f01906fa2962cd93f9df39f3b76464b631",
-          "version": "1.5.1"
-        }
-      },
-      {
-        "package": "GraphQL",
-        "repositoryURL": "https://github.com/GraphQLSwift/GraphQL.git",
-        "state": {
-          "branch": null,
-          "revision": "a3011344bef0374fb72f4ad57a85460564eb8f0e",
-          "version": "2.4.5"
-        }
-      },
-      {
-        "package": "GraphQLRxSwift",
-        "repositoryURL": "https://github.com/GraphQLSwift/GraphQLRxSwift.git",
-        "state": {
-          "branch": null,
-          "revision": "c7ec6595f92ef5d77c06852e4acc4cd46a753622",
-          "version": "0.0.4"
-        }
-      },
-      {
-        "package": "RxSwift",
-        "repositoryURL": "https://github.com/ReactiveX/RxSwift.git",
-        "state": {
-          "branch": null,
-          "revision": "b4307ba0b6425c0ba4178e138799946c3da594f8",
-          "version": "6.5.0"
-        }
-      },
-      {
-        "package": "swift-atomics",
-        "repositoryURL": "https://github.com/apple/swift-atomics.git",
-        "state": {
-          "branch": null,
-          "revision": "ff3d2212b6b093db7f177d0855adbc4ef9c5f036",
-          "version": "1.0.3"
-        }
-      },
-      {
-        "package": "swift-collections",
-        "repositoryURL": "https://github.com/apple/swift-collections",
-        "state": {
-          "branch": null,
-          "revision": "937e904258d22af6e447a0b72c0bc67583ef64a2",
-          "version": "1.0.4"
-        }
-      },
-      {
-        "package": "swift-nio",
-        "repositoryURL": "https://github.com/apple/swift-nio.git",
-        "state": {
-          "branch": null,
-          "revision": "45167b8006448c79dda4b7bd604e07a034c15c49",
-          "version": "2.48.0"
-        }
+  "pins" : [
+    {
+      "identity" : "graphiti",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GraphQLSwift/Graphiti.git",
+      "state" : {
+        "revision" : "1d90f4f01906fa2962cd93f9df39f3b76464b631",
+        "version" : "1.5.1"
       }
-    ]
-  },
-  "version": 1
+    },
+    {
+      "identity" : "graphql",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/GraphQLSwift/GraphQL.git",
+      "state" : {
+        "revision" : "a3011344bef0374fb72f4ad57a85460564eb8f0e",
+        "version" : "2.4.5"
+      }
+    },
+    {
+      "identity" : "graphqlrxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PassiveLogic/GraphQLRxSwift.git",
+      "state" : {
+        "revision" : "ccf9c067d86cba9e68642b2e5bdeb7236612c232",
+        "version" : "0.0.5-pl.1"
+      }
+    },
+    {
+      "identity" : "rxswift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/PassiveLogic/RxSwift.git",
+      "state" : {
+        "revision" : "b5a0ba4d488ded8813cde51c7d49d7ad6cb56372",
+        "version" : "6.8.1-pl.1"
+      }
+    },
+    {
+      "identity" : "swift-atomics",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-atomics.git",
+      "state" : {
+        "revision" : "ff3d2212b6b093db7f177d0855adbc4ef9c5f036",
+        "version" : "1.0.3"
+      }
+    },
+    {
+      "identity" : "swift-collections",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-collections",
+      "state" : {
+        "revision" : "937e904258d22af6e447a0b72c0bc67583ef64a2",
+        "version" : "1.0.4"
+      }
+    },
+    {
+      "identity" : "swift-nio",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/swift-nio.git",
+      "state" : {
+        "revision" : "45167b8006448c79dda4b7bd604e07a034c15c49",
+        "version" : "2.48.0"
+      }
+    }
+  ],
+  "version" : 2
 }
